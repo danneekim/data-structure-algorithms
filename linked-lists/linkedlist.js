@@ -78,18 +78,17 @@ export class LinkedList {
     }
     return null;
   }
-
   // contains
   contains(item){
     let current = this.head;
     while(current.next != null){
       if(current.next.value === item){
-        console.log(true);
+        // console.log(true);
         return true;
       }
       current = current.next;
     }
-    console.log(false);
+    // console.log(false);
     return false;
   }
   // indexOf
@@ -98,13 +97,13 @@ export class LinkedList {
     let current = this.head;
     while(current.next != null){
       if(current.next.value === item){
-        console.log(index);
+        // console.log(index);
         return index;
       }
       current = current.next;
       index++;
     }
-    console.log(-1);
+    // console.log(-1);
     return -1;
   }
   // clear
@@ -119,7 +118,7 @@ export class LinkedList {
       count++;
       node = node.next;
     }
-    console.log(count);
+    // console.log(count);
     return count;
   }
   // toArray
@@ -131,8 +130,33 @@ export class LinkedList {
       array[index++] = current.value;
       current = current.next;
     }
-    console.log(array);
+    // console.log(array);
     return array;
+  }
+  // reverse order
+  reverse(){
+    let current = this.head.next;
+    let previous = this.head;
+    // [10, 20, 30]
+    //  p   c   n
+    while(current != null){
+      var next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    return current = previous;
+
+    // while(current != null){
+    //   // save next before we overwrite node.next!
+    //   tmp = current.next;
+    //   // reverse pointer
+    //   current.next = previous;
+    //   // step forward in the list
+    //   previous = current;
+    //   current = tmp;
+    // }
+    // return previous;
   }
 }
 

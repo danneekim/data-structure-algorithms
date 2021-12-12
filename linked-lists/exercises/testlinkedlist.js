@@ -1,6 +1,6 @@
 import { ListNode, LinkedList } from "../linkedlist.js";
 
-// test linkedlist
+// test linkedlist functions
 let node1 = new ListNode(1);
 let node2 = new ListNode(2);
 node1.next = node2;
